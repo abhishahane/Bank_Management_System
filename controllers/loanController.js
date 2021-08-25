@@ -57,50 +57,50 @@ module.exports.getLoans = async (req, res) => {
 };
 
 // Deleting a loan by Id
-module.exports.deleteLoan = async (req, res) => {
-  await Loan.findOneAndDelete({
-    _id: req.params.id,
-  })
-    .then((result) => {
-      if (result == null) {
-        res.status(400).json({
-          error: `Loan with id:${req.params.id} does not exist`,
-        });
-      } else {
-        res.status(200).json({
-          message: 'Loan deleted',
-        });
-      }
-    })
-    .catch((err) => {
-      res.status(400).json({
-        error: err,
-      });
-    });
-};
+// module.exports.deleteLoan = async (req, res) => {
+//   await Loan.findOneAndDelete({
+//     _id: req.params.id,
+//   })
+//     .then((result) => {
+//       if (result == null) {
+//         res.status(400).json({
+//           error: `Loan with id:${req.params.id} does not exist`,
+//         });
+//       } else {
+//         res.status(200).json({
+//           message: 'Loan deleted',
+//         });
+//       }
+//     })
+//     .catch((err) => {
+//       res.status(400).json({
+//         error: err,
+//       });
+//     });
+// };
 
 // Update an loan by Id
-module.exports.updateLoan = async (req, res) => {
-  await Loan.findOneAndUpdate({
-    _id: req.params.id,
-  }, {
-    $set: {
-      loanType: req.body.loanType,
-      loanAmount: req.body.loanAmount,
-      date: req.body.date,
-      rateOfInterest: req.body.rateOfInterest,
-      durationOfLoan: req.body.durationOfLoan,
-    },
-  })
-    .then(() => {
-      res.status(201).json({
-        message: 'Updated Successfully',
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(401).json({
-        error: err,
-      });
-    });
-};
+// module.exports.updateLoan = async (req, res) => {
+//   await Loan.findOneAndUpdate({
+//     _id: req.params.id,
+//   }, {
+//     $set: {
+//       loanType: req.body.loanType,
+//       loanAmount: req.body.loanAmount,
+//       date: req.body.date,
+//       rateOfInterest: req.body.rateOfInterest,
+//       durationOfLoan: req.body.durationOfLoan,
+//     },
+//   })
+//     .then(() => {
+//       res.status(201).json({
+//         message: 'Updated Successfully',
+//       });
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(401).json({
+//         error: err,
+//       });
+//     });
+// };

@@ -258,58 +258,58 @@ describe('GET: /loan', () => {
   });
 });
 
-describe('PUT: /loan', () => {
-  const data = {
-    loanType: 'Home Loan',
-    loanAmount: 200000,
-    date: '2021-08-18',
-    rateOfInterest: 8,
-    durationOfLoan: 5,
-  };
+// describe('PUT: /loan', () => {
+//   const data = {
+//     loanType: 'Home Loan',
+//     loanAmount: 200000,
+//     date: '2021-08-18',
+//     rateOfInterest: 8,
+//     durationOfLoan: 5,
+//   };
 
-  test('update loan - failure (without passing id)', async () => {
-    await request(app)
-      .put('/loan')
-      .send(data)
-      .expect(404);
-  });
+//   test('update loan - failure (without passing id)', async () => {
+//     await request(app)
+//       .put('/loan')
+//       .send(data)
+//       .expect(404);
+//   });
 
-  test('update loan - failure', async () => {
-    await request(app)
-      .put('/loan/:id')
-      .send(data)
-      .expect(401);
-  });
+//   test('update loan - failure', async () => {
+//     await request(app)
+//       .put('/loan/:id')
+//       .send(data)
+//       .expect(401);
+//   });
 
-  // test('update loan successful', async () => {
-  //     await request(app)
-  //         .put('/loan/:id')
-  //         .send(data)
-  //         .set('Cookie',`jwt=${token}`)
-  //         .expect(201)
-  // })
-});
+//   // test('update loan successful', async () => {
+//   //     await request(app)
+//   //         .put('/loan/:id')
+//   //         .send(data)
+//   //         .set('Cookie',`jwt=${token}`)
+//   //         .expect(201)
+//   // })
+// });
 
-describe('DELETE: /loan', () => {
-  test('delete loan - failure (without passing id)', async () => {
-    await request(app)
-      .delete('/loan')
-      .expect(404);
-  });
+// describe('DELETE: /loan', () => {
+//   test('delete loan - failure (without passing id)', async () => {
+//     await request(app)
+//       .delete('/loan')
+//       .expect(404);
+//   });
 
-  test('delete loan - failure', async () => {
-    await request(app)
-      .delete('/loan/:id')
-      .expect(401);
-  });
+//   test('delete loan - failure', async () => {
+//     await request(app)
+//       .delete('/loan/:id')
+//       .expect(401);
+//   });
 
-  // test('delete loan successful', async () => {
-  //     await request(app)
-  //         .delete('/loan/:id')
-  //         .set('Cookie',`jwt=${token}`)
-  //         .expect(200)
-  // })
-});
+//   // test('delete loan successful', async () => {
+//   //     await request(app)
+//   //         .delete('/loan/:id')
+//   //         .set('Cookie',`jwt=${token}`)
+//   //         .expect(200)
+//   // })
+// });
 
 describe('GET: /logout', () => {
   test('logout - failure', async () => {
